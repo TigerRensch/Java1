@@ -1,8 +1,0 @@
-Bob,Roberts,4.0,1111
-Jack,Williams,3.5,1122
-Sue,Woo,3.0,2111
-George,Jetson,3.5,2212
-Alice,Klein,3.6,3323
-Scott,Weiland,2.8,3333
-Eddie,Vedder,3.7,3222
-
