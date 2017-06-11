@@ -5,7 +5,7 @@
 //Exercise 1 
 /**Description of Program:
  *
- *This class will make use of array lists to store the student
+ *This class will make use of array lists to store the student.
  *   
  */
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class StudentSearcher{
       String lastName;
       String gpa;
       String path = "students.txt";
-      
+
       //array lists
       ArrayList<String> studentfNameList = new ArrayList<String>();
       ArrayList<String> studentlNameList = new ArrayList<String>();

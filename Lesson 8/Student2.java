@@ -5,7 +5,7 @@
 //Exercise 1 
 /*Description of Program:
  *
- *This class will use the StudentSearcher class
+ *This class will use the StudentSearcher class......
  *   
  */
  
