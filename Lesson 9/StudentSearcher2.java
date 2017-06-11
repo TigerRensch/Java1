@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class StudentSearcher{
+public class StudentSearcher2{
 
       //fields
       String firstName;
