@@ -7,7 +7,6 @@
  *
  *This class will class will create and display
  * a checkerboard using a two-dimensional array.
- * Here is a test change.
  */
 
 
