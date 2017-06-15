@@ -29,6 +29,7 @@ public class EmployeeData {
         ArrayList<String> employeeList = new ArrayList<String>();
         String path = "employees.txt";
 
+
         Scanner input = new Scanner(System.in);
 
         Employee[] emps = new Employee[7];
@@ -51,56 +52,40 @@ public class EmployeeData {
                 itemList.add(item);
             }
 
-            System.out.print(itemList);
-
-            //get the data from the file
-
-            BufferedReader bufferedReader = null;
-            String line = null;
-            String[] lineArray;
-
-            try {
-                //Read File
-                bufferedReader = new BufferedReader(new FileReader(path));
-                //Loop until the end of the file creating students
-                while((line = bufferedReader.readLine()) != null) {
-                    lineArray = line.split(",");
-                    if(lineArray.length == 5){
-                        employeeList.add(lineArray[0]);
-                        employeeList.add(lineArray[1]);
-                        employeeList.add(lineArray[2]);
-                        employeeList.add(lineArray[3]);
-                        employeeList.add(lineArray[4]);
-                    }
-                }
-            }
-            catch(FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            catch(IOException e) {
-                e.printStackTrace();
-            }
-            finally{
-                try {
-                    bufferedReader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            //match the data from the string and the file (2 for loops)
-            //if there is match pass it to the Employee class
-            //through the set method
-            //retrieve the result through the get method
-
         Employee employee = new Employee();
 
         for(int i = 0; i < itemList.size(); i++){
-                for(int j = 0; j < employeeList.size(); j++){
-                    if(i == j){
-                        employee.setFirstName(itemList.get(i));
-                    }
+
+            if(i <= numEmployees){
+                if(i == 0){
+                    employee.setFirstName(itemList.get(i));
+                    String firstName = employee.getFirstName();
+                    employeeList.add(firstName);
                 }
+
+                if(i == 1){
+                    employee.setLastName(itemList.get(i));
+                    String lastName=employee.getLastName();
+                    employeeList.add(lastName);
+                }
+
+                if(i == 2){
+                    employee.setNumericID(itemList.get(i));
+                    String numericId = employee.getNumericID();
+                    employeeList.add(numericId);
+                }
+
+                if(i == 3){
+                    employee.setHourlyWage(itemList.get(i));
+                    String hourlyWage = employee.getHourlyWage();
+                    employeeList.add(hourlyWage);
+                }
+            }
+
+        }
+
+        for (String emp:employeeList) {
+
         }
 
 

@@ -13,8 +13,8 @@ public class Employee {
 
     private String firstName;
     private String lastName;
-    private int numericID;
-    private double hourlyWage;
+    private String numericID;
+    private String hourlyWage;
 
     public String getFirstName(){
         return firstName;
@@ -32,19 +32,19 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public int getNumericID() {
+    public String getNumericID() {
         return numericID;
     }
 
-    public void setNumericID(int numericID){
+    public void setNumericID(String numericID){
         this.numericID = numericID;
     }
 
-    public double getHourlyWage(){
+    public String getHourlyWage(){
         return hourlyWage;
     }
 
-    public void setHourlyWage(double hourlyWage){
+    public void setHourlyWage(String hourlyWage){
         this.hourlyWage = hourlyWage;
     }
 }
