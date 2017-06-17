@@ -24,78 +24,63 @@ public class EmployeeData {
 
         //boolean search = true;
         int numEmployees;
+        int employeeNum = 0;
         String employeeData;
         ArrayList<String> itemList = new ArrayList<String>();
         ArrayList<String> employeeList = new ArrayList<String>();
         String path = "employees.txt";
+        String firstName = "";
+        String lastName = "";
+        String numericID = "";
+        String hourlyWage = "";
 
 
         Scanner input = new Scanner(System.in);
 
         Employee[] emps = new Employee[7];
 
-        //while(search){
             System.out.print("\nHow many employees do you want to enter: >>");
             numEmployees = input.nextInt();
-
-            //Bob,Mike,clerk,10.25,1111
 
             input.nextLine();
 
             System.out.print("\nPlease enter the Employee's Data separated by exactly one space first name, last name, numeric ID and hourly wage >>");
             employeeData = input.nextLine();
-            //System.out.print(employeeData);
 
-            //pass the string and break it delimit by space
+            Employee employee = new Employee();
             String[] itemSeparator = employeeData.split(" ");
-            for(String item : itemSeparator){
-                itemList.add(item);
-            }
 
-        Employee employee = new Employee();
+            for(int i=0;i<itemSeparator.length;i++){
+                String item = itemSeparator[i];
 
-        for(int i = 0; i < itemList.size(); i++){
-
-            if(i <= numEmployees){
                 if(i == 0){
-                    employee.setFirstName(itemList.get(i));
-                    String firstName = employee.getFirstName();
-                    employeeList.add(firstName);
+                    employee.setFirstName(item);
+                    firstName = employee.getFirstName();
                 }
 
                 if(i == 1){
-                    employee.setLastName(itemList.get(i));
-                    String lastName=employee.getLastName();
-                    employeeList.add(lastName);
+                    employee.setLastName(item);
+                    lastName = employee.getLastName();
                 }
 
                 if(i == 2){
-                    employee.setNumericID(itemList.get(i));
-                    String numericId = employee.getNumericID();
-                    employeeList.add(numericId);
+                    employee.setNumericID(item);
+                    numericID = employee.getNumericID();
                 }
 
                 if(i == 3){
-                    employee.setHourlyWage(itemList.get(i));
-                    String hourlyWage = employee.getHourlyWage();
-                    employeeList.add(hourlyWage);
+                    employee.setHourlyWage(item);
+                    hourlyWage = employee.getHourlyWage();
                 }
+
             }
 
-        }
+            employeeNum ++;
 
-        for (String emp:employeeList) {
-
-        }
-
-
-
-            //push that into an array
-
-            //print out the result
-
-
-        //}
+            System.out.print("Employee # " + employeeNum);
+            System.out.print("\nEmployee Name: " + firstName + "  " + lastName);
+            System.out.print("\nID: " + numericID);
+            System.out.print("\nHourly wage: " + hourlyWage);
 
 
     }
