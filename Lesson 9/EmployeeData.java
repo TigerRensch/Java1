@@ -6,8 +6,8 @@
 /*Description of Program:
  *
  * This is the EmployeeData class
- * The array has a 4 index limit, at most 2 employees can be entered currently to prevent repetition of final index.
- * This needs to be refactored to use an array list since we need mutabliity and flexibility.
+ * Limitation: The array has a 4 index limit, at most 2 employees can be entered currently to prevent repetition of final index twice.
+ * Solution to overcome limitation: This needs to be refactored to use an array list since we need mutabliity and flexibility.
  */
 
 
