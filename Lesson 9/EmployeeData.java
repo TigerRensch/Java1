@@ -23,15 +23,14 @@ public class EmployeeData {
 
         boolean search = true;
         int numEmployees = 0;
-        int employeeNum = 0;
+        int employeeNum;
         String employeeData;
         String firstName = "";
         String lastName = "";
         String numericID = "";
         String hourlyWage = "";
-        String[] employeeItemArray = new String[4];
-        ArrayList<String> employeeList = new ArrayList<>();
-
+        String[]employeeItem = new String[4];
+        String[][] employeeItemsArray = new String[4][4];
 
 
         while(search){
@@ -47,42 +46,47 @@ public class EmployeeData {
             System.out.print("\nPlease enter the Employee's Data separated by exactly one space first name, last name, numeric ID and hourly wage >>");
             employeeData = input.nextLine();
 
-            employeeItemArray = employeeData.split(" ");
-            employeeList.addAll(Arrays.asList(employeeItemArray));
+            employeeItem = employeeData.split(" ");
+
+            employeeNum = 0;
+
+//            employeeItemsArray[0][0] = employeeItem[0];
+//            employeeItemsArray[0][1] = employeeItem[1];
+
+            for(int i = 0; i < employeeItemsArray.length; i++){
+                for(int j = 0; j < employeeItem.length;j++){
+                    employeeItemsArray[employeeNum][j] = employeeItem[j];
+                }
+
+            }
+
 
             employeeNum ++;
 
-            if(employeeNum > 0){
 
-                if(employeeNum != numEmployees){
-                    System.out.print("\nInput the next Employee >>");
-                    employeeData = input.nextLine();
+            if(employeeNum != numEmployees){
+                System.out.print("\nInput the next Employee >>");
+                employeeData = input.nextLine();
 
-                    employeeItemArray = employeeData.split(" ");
-                    employeeList.addAll(Arrays.asList(employeeItemArray));
-                }
-                else if(employeeNum == numEmployees){
-                    for(int i=0; i < employeeList.size(); i++){
+                System.out.print(employeeData);
 
-                        Employee employee = new Employee();
+                employeeItem = employeeData.split(" ");
 
-                        for(int j = 0; j < employeeItemArray.length; j++){
-                            String item = employeeItemArray[j];
+//                employeeItemsArray[1][0] = employeeItem[0];
+//                employeeItemsArray[1][1] = employeeItem[1];
 
-                            if(j == 0){
-                                employee.setFirstName(item);
-                                firstName = employee.getFirstName();
-                            }
-
-                        }
-
-                        System.out.print("\nEmployee # " + employeeNum);
-
-                        System.out.print("\nEmployee Name: " + firstName);
-
+                for(int i = 0; i < employeeItemsArray.length; i++){
+                    for(int j = 0; j < employeeItem.length;j++){
+                        employeeItemsArray[employeeNum][j] = employeeItem[j];
                     }
+
                 }
             }
+
+
+
+            search = false;
+
 
         }
 
