@@ -1,11 +1,22 @@
-/**
- * Created by sachinhaldipur on 6/18/17.
- */
+//Author: Sachin Haldipur
+//Date: 06/11/2017
+//Class Info: CIS163AA - Java Programming: Level I
+//Lesson 9
+//Exercise 3
+/*Description of Program:
+*
+* This is the InsertionSort class that will be used by the TestSort class.
+*
+*
+*/
+
+
 public class InsertionSort {
 
-    public void insertionSort(){
+    public void insertionSortMethod(int []someNums){
 
-        int []someNums = new int [5];
+
+
         int temp = 0;
 
         int a=1;
@@ -20,6 +31,12 @@ public class InsertionSort {
             someNums[b+1]=temp;
             ++a;
 
+        }
+
+        System.out.print("Sorted Array through insertion sort:\n");
+        for(int x = 0; x < someNums.length; ++x){
+            System.out.print(someNums[x] + " ");
+            System.out.println();
         }
 
     }
