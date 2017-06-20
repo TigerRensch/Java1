@@ -6,7 +6,7 @@
 /*Description of Program:
 *
 * This is the InsertionSort class that will be used by the TestSort class.
-*
+* Insertion sort seems more efficient as there are less iterations during the sorting operation.
 *
 */
 
