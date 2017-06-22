@@ -21,10 +21,14 @@ public class RealEstate {
         final int EXIT = 3;
         String path = "realestate.txt";
 
-        ArrayList<String> realEstatelist = new ArrayList<String>();
+        ArrayList<String> realEstateNameList = new ArrayList<String>();
+        ArrayList<String> realEstatePriceList = new ArrayList<String>();
+        ArrayList<String> realEstateLocationList = new ArrayList<String>();
 
         //clear array list to prevent duplication
-        realEstatelist.clear();
+        realEstateNameList.clear();
+        realEstatePriceList.clear();
+        realEstateLocationList.clear();
 
 
         //load in real estate data from file
@@ -39,9 +43,10 @@ public class RealEstate {
             //Loop until the end of the file creating students
             while((line = bufferedReader.readLine()) != null) {
                 lineArray = line.split(",");
-                if(lineArray.length == 4){
-                    realEstatelist.add(lineArray[0]);
-
+                if(lineArray.length == 3){
+                    realEstateNameList.add(lineArray[0]);
+                    realEstatePriceList.add(lineArray[1]);
+                    realEstateLocationList.add(lineArray[2]);
                 }
             }
 
@@ -63,7 +68,7 @@ public class RealEstate {
 
         Scanner input = new Scanner(System.in);
 
-        String [][] realEstateData = new String[5][3];
+        String [][] realEstateData = new String[5][2];
 
         RealEstateFinder finder = new RealEstateFinder();
 
@@ -72,8 +77,12 @@ public class RealEstate {
 
         if(option == 1){
 
-            for(int i = 0; i < realEstatelist.size(); i++){
-                realEstateData[0][0] = realEstatelist.get(i);
+            for(int i = 0; i < realEstateNameList.size(); i++){
+                realEstateData[0][0] = realEstateNameList.get(i);
+                realEstateData[1][0] = realEstateNameList.get(i);
+                realEstateData[2][0] = realEstateNameList.get(i);
+                realEstateData[3][0] = realEstateNameList.get(i);
+                realEstateData[4][0] = realEstateNameList.get(i);
 
             }
 
@@ -84,8 +93,12 @@ public class RealEstate {
         if(option == 2){
 
 
-            for(int i = 0; i < realEstatelist.size(); i++){
-                realEstateData[0][0] = realEstatelist.get(i);
+            for(int i = 0; i < realEstateNameList.size(); i++){
+                realEstateData[0][0] = realEstateNameList.get(i);
+                realEstateData[1][0] = realEstateNameList.get(i);
+                realEstateData[2][0] = realEstateNameList.get(i);
+                realEstateData[3][0] = realEstateNameList.get(i);
+                realEstateData[4][0] = realEstateNameList.get(i);
 
             }
 
