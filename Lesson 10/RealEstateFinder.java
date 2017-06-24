@@ -1,21 +1,39 @@
 /**
- * Created by sachinhaldipur on 6/19/17.
+ *Author: Sachin Haldipur
+ *Date: 6/24/2017
+ *Class Info: CIS163AA - Java Programming: Level I
+ *Lesson 10
+ *Exercise 1
+ *  This is the RealEstateFinder class that will make use of the RealEstate class.
  */
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+
 
 public class RealEstateFinder {
-//https://stackoverflow.com/questions/4907683/sort-a-two-dimensional-array-based-on-one-column
     public void SortPerPrice(String[][] array){
 
-        for(int i = 0; i < array.length; i++){
-            for(int j = 0; j < array[i].length; j++){
-                Arrays.sort(array[j]);
+
+        Arrays.sort(array, new Comparator<String[]>() {
+            @Override
+            public int compare(final String[] p1, final String[] p2) {
+                final String price1 = p1[0];
+                final String price2 = p2[0];
+                return price1.compareTo(price2);
             }
+        });
+
+        System.out.println("Real estate sorted by price: ");
+
+        for(final String[] s : array){
+
+            System.out.println("$" + s[0] + " " + s[1] + " " + s[2]);
+
         }
 
 
-        display("Real estate sorted by price:        ", array);
+
 
     }
 
@@ -23,9 +41,24 @@ public class RealEstateFinder {
 
 
 
-        Arrays.sort(array);
+        Arrays.sort(array, new Comparator<String[]>() {
+            @Override
+            public int compare(final String[] p1, final String[] p2) {
+                final String price1 = p1[0];
+                final String price2 = p2[0];
+                return price1.compareTo(price2);
+            }
+        });
 
-        display("Real estate sorted by location:        ", array);
+        System.out.println("Real estate sorted by location: ");
+
+        for(final String[] s : array){
+
+            System.out.println(s[0] + " " + s[1] + " " + "$" + s[2]);
+
+        }
+
+
     }
 
     public void Exit(){
@@ -35,15 +68,6 @@ public class RealEstateFinder {
     }
 
 
-    public static void display(String message, String[][] array){
-        int i = array.length;
-        System.out.print(message);
-        for(int x = 0; x < i; ++x){
-            System.out.print(array[x] + " ");
-        }
 
-        System.out.println();
-
-    }
 
 }

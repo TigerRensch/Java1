@@ -1,5 +1,10 @@
 /**
- *
+ *Author: Sachin Haldipur
+ *Date: 6/24/2017
+ *Class Info: CIS163AA - Java Programming: Level I
+ *Lesson 10
+ *Exercise 1
+ *  This is the RealEstate class that will make use of the RealEstateFinder class.
  */
 
 
@@ -68,7 +73,7 @@ public class RealEstate {
 
         Scanner input = new Scanner(System.in);
 
-        String [][] realEstateData = new String[5][3];
+
 
         RealEstateFinder finder = new RealEstateFinder();
 
@@ -77,34 +82,28 @@ public class RealEstate {
 
         if(option == 1){
 
-                realEstateData[0][0] = realEstatePriceList.get(0);
-                realEstateData[1][0] = realEstatePriceList.get(1);
-                realEstateData[2][0] = realEstatePriceList.get(2);
-                realEstateData[3][0] = realEstatePriceList.get(3);
-                realEstateData[4][0] = realEstatePriceList.get(4);
+            final String[][] realEstateData = new String[][] {
+            new String[] { realEstatePriceList.get(0), realEstateNameList.get(0), realEstateLocationList.get(0)},
+            new String[] { realEstatePriceList.get(1), realEstateNameList.get(1), realEstateLocationList.get(1)},
+            new String[] { realEstatePriceList.get(2), realEstateNameList.get(2), realEstateLocationList.get(2)},
+            new String[] { realEstatePriceList.get(3), realEstateNameList.get(3), realEstateLocationList.get(3)},
+            new String[] { realEstatePriceList.get(4), realEstateNameList.get(4), realEstateLocationList.get(4)}};
 
-                realEstateData[0][1] = realEstateNameList.get(0);
-                realEstateData[1][1] = realEstateNameList.get(1);
-                realEstateData[2][1] = realEstateNameList.get(2);
-                realEstateData[3][1] = realEstateNameList.get(3);
-                realEstateData[4][1] = realEstateNameList.get(4);
 
-                realEstateData[0][2] = realEstateLocationList.get(0);
-                realEstateData[1][2] = realEstateLocationList.get(1);
-                realEstateData[2][2] = realEstateLocationList.get(2);
-                realEstateData[3][2] = realEstateLocationList.get(3);
-                realEstateData[4][2] = realEstateLocationList.get(4);
 
             finder.SortPerPrice(realEstateData);
 
         }
 
         if(option == 2){
-                realEstateData[0][0] = realEstateNameList.get(0);
-                realEstateData[1][0] = realEstateNameList.get(1);
-                realEstateData[2][0] = realEstateNameList.get(2);
-                realEstateData[3][0] = realEstateNameList.get(3);
-                realEstateData[4][0] = realEstateNameList.get(4);
+
+            final String[][] realEstateData = new String[][] {
+                    new String[] { realEstateLocationList.get(0), realEstateNameList.get(0), realEstatePriceList.get(0)},
+                    new String[] { realEstateLocationList.get(1), realEstateNameList.get(1), realEstatePriceList.get(1)},
+                    new String[] { realEstateLocationList.get(2), realEstateNameList.get(2), realEstatePriceList.get(2)},
+                    new String[] { realEstateLocationList.get(3), realEstateNameList.get(3), realEstatePriceList.get(3)},
+                    new String[] { realEstateLocationList.get(4), realEstateNameList.get(4), realEstatePriceList.get(4)}};
+
             finder.SortPerLocation(realEstateData);
         }
 
