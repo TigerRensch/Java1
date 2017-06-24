@@ -52,8 +52,8 @@ public class StudentSearcher{
                 //Loop until the end of the file creating students
                 while((line = bufferedReader.readLine()) != null) {
                 	lineArray = line.split(",");
-                	if(lineArray.length == 4){                     
-                		studentfNameList.add(lineArray[0]);
+                	if(lineArray.length == 4){
+                     studentfNameList.add(lineArray[0]);
                      studentlNameList.add(lineArray[1]);
                      gpaList.add(lineArray[2]);
                      idList.add(lineArray[3]);                   
@@ -66,7 +66,7 @@ public class StudentSearcher{
                      for(int j = 0; j < studentfNameList.size(); j++){
                         if(i == j){
                            firstName = studentfNameList.get(j);                                                 
-                           //System.out.print("\n" + firstName);
+
                          
                            studentProfile.add(firstName);
                            

@@ -12,13 +12,14 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class StudentFinder {
 
     //fields
     String firstName;
-    String lastName;
-    String gpa;
+
     String path = "students.txt";
 
 
@@ -28,11 +29,11 @@ public class StudentFinder {
     ArrayList<String> gpaList = new ArrayList<String>();
     ArrayList<String> idList = new ArrayList<String>();
 
-    ArrayList<String> studentProfile = new ArrayList<String>();
 
 
 
-    public ArrayList<String> searchStudent(String studentId){
+
+    public void searchStudent(String studentLetter){
 
         //clear array lists to prevent duplication
         studentfNameList.clear();
@@ -59,64 +60,6 @@ public class StudentFinder {
                 }
             }
 
-            for(int i = 0; i < idList.size(); i++){
-                if(studentId.equals(idList.get(i)))
-                {
-                    for(int j = 0; j < studentfNameList.size(); j++){
-                        if(i == j){
-                            firstName = studentfNameList.get(j);
-                            //System.out.print("\n" + firstName);
-
-                            studentProfile.add(firstName);
-
-                        }
-                    }
-
-                }
-
-            }
-
-
-            for(int i = 0; i < idList.size(); i++){
-                if(studentId.equals(idList.get(i)))
-                {
-                    for(int j = 0; j < studentlNameList.size(); j++){
-                        if(i == j){
-                            lastName = studentlNameList.get(j);
-                            //System.out.print("\n" + lastName);
-
-                            studentProfile.add(lastName);
-
-                        }
-                    }
-
-                }
-            }
-
-
-            for(int i = 0; i < idList.size(); i++){
-                if(studentId.equals(idList.get(i)))
-                {
-                    for(int j = 0; j < gpaList.size(); j++){
-
-                        if(i == j)
-                        {
-                            studentId = idList.get(i);
-                            gpa = gpaList.get(j);
-
-                            //System.out.print("\n" + studentId);
-                            //System.out.print("\n" + gpa);
-
-                            studentProfile.add(studentId);
-                            studentProfile.add(gpa);
-
-
-                        }
-
-                    }
-                }
-
-            }
         }
         catch(FileNotFoundException e) {
             e.printStackTrace();
@@ -132,7 +75,72 @@ public class StudentFinder {
             }
         }
 
-        return studentProfile;
+
+
+        final String[][] studentData = new String[][] {
+                new String[] { studentfNameList.get(0), studentlNameList.get(0), gpaList.get(0), idList.get(0)},
+                new String[] { studentfNameList.get(1), studentlNameList.get(1), gpaList.get(1), idList.get(1)},
+                new String[] { studentfNameList.get(2), studentlNameList.get(2), gpaList.get(2), idList.get(2)},
+                new String[] { studentfNameList.get(3), studentlNameList.get(3), gpaList.get(3), idList.get(3)},
+                new String[] { studentfNameList.get(4), studentlNameList.get(4), gpaList.get(4), idList.get(4)},
+                new String[] { studentfNameList.get(5), studentlNameList.get(5), gpaList.get(5), idList.get(5)},
+                new String[] { studentfNameList.get(6), studentlNameList.get(6), gpaList.get(6), idList.get(6)},
+        };
+
+
+
+
+        Arrays.sort(studentData, new Comparator<String[]>() {
+            @Override
+            public int compare(final String[] p1, final String[] p2) {
+                final String price1 = p1[0];
+                final String price2 = p2[0];
+                return price1.compareTo(price2);
+            }
+        });
+
+
+
+        System.out.print("The student profile that was chosen based on the first name input: ");
+
+
+        //loop through the sorted list to find the first name containing the letter input
+        for(int i = 0; i<studentData.length;i++){
+
+            for(int j = 0; j < studentData[i].length; j++){
+
+                 firstName = studentData[i][0];
+
+                 if(firstName.contains(studentLetter)){
+                     System.out.print(studentData[i][j] + ",");
+                 }
+
+            }
+
+            System.out.print("\n");
+
+        }
+
+
+        System.out.print("\nThe rest of the student profiles sorted alphabetically by first name: " + "\n");
+
+
+        for(int i = 0; i<studentData.length;i++){
+
+            for(int j = 0; j < studentData[i].length; j++){
+
+                firstName = studentData[i][0];
+
+                if(!firstName.contains(studentLetter)){
+                    System.out.print(studentData[i][j] + ",");
+                }
+
+            }
+            System.out.print("\n");
+
+        }
+
+
 
     }
 }
