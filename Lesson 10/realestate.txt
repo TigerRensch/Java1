@@ -1,0 +1,6 @@
+Mansion, 900000, Flagstaff
+Ranch House, 100000, Phoenix
+Colonial House, 300000, Scottsdale
+Condominium, 750000, Tempe
+Split Ranch, 150000, Mesa
+
