@@ -5,16 +5,23 @@
 import java.util.*;
 
 public class RealEstateFinder {
-
+//https://stackoverflow.com/questions/4907683/sort-a-two-dimensional-array-based-on-one-column
     public void SortPerPrice(String[][] array){
 
-        Arrays.sort(array);
+        for(int i = 0; i < array.length; i++){
+            for(int j = 0; j < array[i].length; j++){
+                Arrays.sort(array[j]);
+            }
+        }
+
 
         display("Real estate sorted by price:        ", array);
 
     }
 
     public void SortPerLocation(String[][] array){
+
+
 
         Arrays.sort(array);
 
