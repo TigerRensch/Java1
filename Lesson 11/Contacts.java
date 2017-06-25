@@ -64,7 +64,7 @@ public class Contacts extends JFrame implements ActionListener {
 
         try{
 
-            File file = new File("data.txt");
+            File file = new File("Lesson 11/data.txt");
 
             FileWriter writer = new FileWriter(file);
 
@@ -74,9 +74,11 @@ public class Contacts extends JFrame implements ActionListener {
                 {
 
                     //Create your File Writer
-                    writer.write(model.getValueAt(i,j).toString());
 
+                    writer.write(model.getValueAt(i,j).toString());
+                    writer.write(" ");
                 }
+                writer.write("\n");
             }
 
             writer.flush();
