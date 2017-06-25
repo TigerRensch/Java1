@@ -73,7 +73,6 @@ public class Contacts extends JFrame implements ActionListener {
                 for( int j = 0; j < model.getColumnCount(); j++ )
                 {
 
-                    //Create your File Writer
 
                     writer.write(model.getValueAt(i,j).toString());
                     writer.write(" ");
