@@ -1,0 +1,5 @@
+Walk dog, 10.00, 20
+Feed cat, 50.00, 10
+Mow lawn, 40.00, 60
+Weed garden, 20.00, 45
+Water plants, 15.00, 15
