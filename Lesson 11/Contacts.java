@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.table.DefaultTableModel;
+import java.io.*;
+
 
 
 public class Contacts extends JFrame implements ActionListener {
@@ -58,6 +60,33 @@ public class Contacts extends JFrame implements ActionListener {
         }
 
         if(e.getActionCommand().equals("Save")){
+
+
+        try{
+
+            File file = new File("data.txt");
+
+            FileWriter writer = new FileWriter(file);
+
+            for( int i = 0; i < model.getRowCount(); i++ )
+            {
+                for( int j = 0; j < model.getColumnCount(); j++ )
+                {
+
+                    //Create your File Writer
+                    writer.write(model.getValueAt(i,j).toString());
+
+                }
+            }
+
+            writer.flush();
+            writer.close();
+
+        }catch (IOException ex) {
+            ex.printStackTrace();
+
+        }
+
 
         }
     }
