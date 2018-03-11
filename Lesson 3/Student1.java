@@ -4,11 +4,11 @@
 //Lesson 3
 //Exercise 12 a 
 /*
- *Description of Program: The Student class will be instantiated by the ShowStudent class
+ *Description of Program: The Student1 class will be instantiated by the ShowStudent class
  *
  */
 
-public class Student
+public class Student1
 {
    private int idNumber;
    private int creditHoursEarned;
@@ -16,7 +16,7 @@ public class Student
    private int gradePointAverage;
    
    //constructor   
-   public Student(){
+   public Student1(){
    
          idNumber = 9999;
          pointsEarned = 12;

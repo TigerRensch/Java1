@@ -11,7 +11,7 @@ public class Student
    }
    public void showStudent()
    {
-     System.out.println("Student #" + stuNum +
+     System.out.println("Student1 #" + stuNum +
          " gpa is " + gpa);
    }
 }

@@ -4,7 +4,7 @@
 //Lesson 3
 //Exercise 12 b 
 /*
- *Description of Program: The ShowStudent class will instantiate the Student class
+ *Description of Program: The ShowStudent class will instantiate the Student1 class
  */
 
 public class ShowStudent
@@ -18,7 +18,7 @@ public class ShowStudent
       int pointsEarned = creditHoursEarned * 4;
       int gradePointAverage;
    
-      Student object = new Student();
+      Student1 object = new Student1();
    
       object.setIdNumber(idNumber);
       int ID = object.getIdNumber();

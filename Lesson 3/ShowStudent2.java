@@ -4,7 +4,7 @@
 //Lesson 3
 //Exercise 12 c 
 /*
- *Description of Program: In this program a constructor created in the Student class will be tested by
+ *Description of Program: In this program a constructor created in the Student1 class will be tested by
  *instantiating an object and displaying the initial values.
  */
  
@@ -14,7 +14,7 @@
    public static void main(String[] args)
    {
                             
-      Student student1 = new Student();
+      Student1 student1 = new Student1();
                
    }
  
