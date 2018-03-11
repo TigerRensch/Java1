@@ -45,6 +45,7 @@ public class AnimalDemo {
 
 
         //demo Shark inheritance
+
         Shark shark = new Shark();
 
         shark.setName("Jaws");
